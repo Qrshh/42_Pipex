@@ -9,9 +9,9 @@ INC_DIR = inc
 SRC_IS = ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint
 SRC_STR = ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr \
 			ft_strnstr ft_strncmp ft_substr ft_strjoin ft_strtrim \
-			ft_split ft_strmapi ft_striteri ft_strdup
+			ft_split ft_strmapi ft_striteri ft_strdup ft_strcat
 SRC_MEM = ft_memset ft_bzero ft_memcpy ft_memmove ft_memchr \
-			ft_memcmp ft_calloc
+			ft_memcmp ft_calloc ft_realloc
 SRC_TO = ft_atoi ft_toupper ft_tolower ft_itoa
 SRC_PUT = ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd
 SRC_LST = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast \
@@ -19,6 +19,7 @@ SRC_LST = ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast \
 			ft_lstmap
 SRC_PRINTF = ft_printf_utils ft_printf 
 SRC_GNL = get_next_line_utils get_next_line
+
 
 # Adding the .c extension back to the file names
 SRC_IS := $(addsuffix .c, $(SRC_IS))

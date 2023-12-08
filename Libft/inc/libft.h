@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 09:11:41 by abesneux          #+#    #+#             */
-/*   Updated: 2023/11/29 16:02:30 by abesneux         ###   ########.fr       */
+/*   Updated: 2023/12/08 03:41:27 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,10 @@ int					ft_printf(const char *format, ...);
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
+
+// PIPEX
+void *ft_realloc(void *ptr, int size);
+char	*ft_strcat(char *dest, char *src);
 
 char	*get_next_line(int fd);
 int		ft_check(char *s);
