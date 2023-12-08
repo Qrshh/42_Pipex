@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 09:11:41 by abesneux          #+#    #+#             */
-/*   Updated: 2023/12/08 03:41:27 by abesneux         ###   ########.fr       */
+/*   Updated: 2023/12/08 07:20:51 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <stdbool.h>
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -91,14 +91,14 @@ int					ft_printf(const char *format, ...);
 # endif
 
 // PIPEX
-void *ft_realloc(void *ptr, int size);
-char	*ft_strcat(char *dest, char *src);
+void				*ft_realloc(void *ptr, int size);
+char				*ft_strcat(char *dest, char *src);
 
-char	*get_next_line(int fd);
-int		ft_check(char *s);
-void	ft_buf_cut(char *dest);
-int		ft_len_gnl(char *s, int j);
-char	*ft_join(char *s1, char *s2);
-char	*test(char *s1, char *dest);
+char				*get_next_line(int fd);
+int					ft_check(char *s);
+void				ft_buf_cut(char *dest);
+int					ft_len_gnl(char *s, int j);
+char				*ft_join(char *s1, char *s2);
+char				*test(char *s1, char *dest);
 
 #endif
