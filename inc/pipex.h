@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:56:50 by abesneux          #+#    #+#             */
-/*   Updated: 2023/12/08 07:20:58 by abesneux         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:42:36 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../Libft/inc/libft.h"
 # include <errno.h>
 # include <fcntl.h>
+# include <stdio.h>
 # include <string.h>
 # include <sys/types.h>
 # include <sys/wait.h>
@@ -31,5 +32,8 @@ typedef struct s_two_pid
 
 int			check_input(int ac);
 void		exec_command(char **arg_tab, char **path_tab);
+void		free_tab(char **tab);
+int			do_command(t_two_pid pidfork, int *fd_tab, char **envp, char **av);
+void		first_command(int first_fd, int wr_fd, char **av, char **envp);
 
 #endif

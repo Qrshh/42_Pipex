@@ -6,11 +6,11 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 04:38:57 by abesneux          #+#    #+#             */
-/*   Updated: 2023/12/08 07:21:46 by abesneux         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:47:50 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../inc/pipex.h"
 
 void	free_tab(char **tab)
 {
@@ -25,7 +25,7 @@ void	free_tab(char **tab)
 void	exec_command(char **arg_tab, char **path_tab)
 {
 	char	*final_path;
-	char	**path;
+	char	**path = path_tab;
 	int		i;
 
 	i = -1;

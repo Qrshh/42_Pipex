@@ -10,7 +10,7 @@ LIBFT_DIR = Libft
 SRC_DIR = src
 OBJ_DIR = obj
 
-SRC_FILES = pipex
+SRC_FILES = pipex pipex_utils
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES:=.c))
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:=.o))
