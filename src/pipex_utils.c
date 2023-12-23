@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abx <abx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 04:38:57 by abesneux          #+#    #+#             */
-/*   Updated: 2023/12/12 14:47:50 by abesneux         ###   ########.fr       */
+/*   Updated: 2023/12/22 21:48:29 by abx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ void	free_tab(char **tab)
 void	exec_command(char **arg_tab, char **path_tab)
 {
 	char	*final_path;
-	char	**path = path_tab;
+	char	**path;
 	int		i;
 
+	path = path_tab;
 	i = -1;
 	final_path = malloc(1);
 	while (path[++i])

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abx <abx@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:56:50 by abesneux          #+#    #+#             */
-/*   Updated: 2023/12/12 15:42:36 by abesneux         ###   ########.fr       */
+/*   Updated: 2023/12/22 19:56:48 by abx              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_two_pid
 int			check_input(int ac);
 void		exec_command(char **arg_tab, char **path_tab);
 void		free_tab(char **tab);
-int			do_command(t_two_pid pidfork, int *fd_tab, char **envp, char **av);
+int			do_command(t_two_pid *pidfork, int *fd_tab, char **envp, char **av);
 void		first_command(int first_fd, int wr_fd, char **av, char **envp);
 
 #endif
