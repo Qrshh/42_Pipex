@@ -1,40 +1,45 @@
 NAME = pipex
-CC = cc
-FLAGS = -Wall -Wextra -Werror 
-
-INCLUDES = -I./inc -I./libft/inc
 
 LIBFT = Libft/libft.a
-LIBFT_DIR = Libft
 
-SRC_DIR = src
-OBJ_DIR = obj
+SRCS =	pipex.c \
+	pipex_utils.c \
 
-SRC_FILES = pipex pipex_utils
+OBJS = ${SRCS:.c=.o}
 
-SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES:=.c))
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:=.o))
+SRCBONUS = pipex_bonus.c \
+	pipex_utils.c \
 
-all: $(NAME)
+OBJSBONUS = ${SRCBONUS:.c=.o}
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(LIBFT) -o $@
+CC = cc
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
+CFLAGS = -Wall -Wextra -Werror -g
+
+RM = rm -rf
+	
+all : $(NAME)
+
+$(NAME) : $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
+
+bonus : $(OBJSBONUS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJSBONUS) -o $(NAME) $(LIBFT)
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
+	make -C Libft
 
-clean:
-	rm -rf $(OBJ_DIR)
-	$(MAKE) -C $(LIBFT_DIR) clean
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-fclean: clean
-	rm -f $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
+clean :
+	$(RM) $(OBJS) $(OBJSBONUS)
+	make clean -C Libft
 
-re: fclean all
+fclean : clean
+	$(RM) $(NAME) $(NAMEBNS)
+	make fclean -C Libft
 
-.PHONY: all clean fclean re bonus
+re : fclean all
+
+.PHONY: all, clean, fclean, re, bonus
