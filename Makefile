@@ -1,4 +1,5 @@
 NAME = pipex
+NAME_BONUS = pipex_bonus
 
 LIBFT = Libft/libft.a
 
@@ -17,14 +18,16 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -rf
-	
+
 all : $(NAME)
 
 $(NAME) : $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
 
-bonus : $(OBJSBONUS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJSBONUS) -o $(NAME) $(LIBFT)
+bonus : $(NAME_BONUS)
+
+$(NAME_BONUS) :	$(OBJSBONUS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJSBONUS) -o $(NAME_BONUS) $(LIBFT)
 
 $(LIBFT):
 	make -C Libft

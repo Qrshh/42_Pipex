@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:46:10 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/09 15:44:22 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:15:33 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	heredoc(char *lim, int fd)
 		if (ft_strncmp(line, lim, ft_strlen(lim)) == 0)
 		{
 			free(line);
-			break ;
+			exit(EXIT_SUCCESS);
 		}
 		write(fd, line, ft_strlen(line));
 		free(line);
