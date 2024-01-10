@@ -6,37 +6,11 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:41:03 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/09 17:50:28 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:28:18 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-char	*getpath(char *cmd, char **env)
-{
-	char	*path;
-	char	*dir;
-	char	*bin;
-	int		i;
-
-	i = 0;
-	while (env[i] && ft_str_ncmp(env[i], "PATH=", 5))
-		i++;
-	if (!env[i])
-		return (cmd);
-	path = env[i] + 5;
-	while (path && ft_str_chr(path, ':') > -1)
-	{
-		dir = ft_strndup(path, ft_str_chr(path, ':'));
-		bin = path_join(dir, cmd);
-		free(dir);
-		if (access(bin, F_OK) == 0)
-			return (bin);
-		free(bin);
-		path += ft_str_chr(path, ':') + 1;
-	}
-	return (cmd);
-}
 
 void	exec(char *cmd, char **env)
 {
@@ -45,8 +19,10 @@ void	exec(char *cmd, char **env)
 	int		i;
 
 	i = -1;
+	if(*cmd == '\0')
+		exit_error("Erreur");
 	args = ft_split(cmd, ' ');
-	if (ft_str_chr(args[0], '/') > -1)
+	if (ft_strchr(args[0], '/') > -1)
 		path = args[0];
 	else
 		path = getpath(args[0], env);

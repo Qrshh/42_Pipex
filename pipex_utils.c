@@ -6,11 +6,37 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:04:07 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/08 16:05:57 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:22:42 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+char	*getpath(char *cmd, char **env)
+{
+	char	*path;
+	char	*dir;
+	char	*bin;
+	int		i;
+
+	i = 0;
+	while (env[i] && ft_strncmp(env[i], "PATH=", 5))
+		i++;
+	if (!env[i])
+		return (cmd);
+	path = env[i] + 5;
+	while (path && ft_strchr(path, ':') > -1)
+	{
+		dir = ft_strndup(path, ft_strchr(path, ':'));
+		bin = path_join(dir, cmd);
+		free(dir);
+		if (access(bin, F_OK) == 0)
+			return (bin);
+		free(bin);
+		path += ft_strchr(path, ':') + 1;
+	}
+	return (cmd);
+}
 
 void	exit_error(char *msg)
 {
@@ -32,35 +58,13 @@ int	open_file(char *filename, int mode)
 	return (fd);
 }
 
-int	ft_str_chr(char *str, char c)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && str[i] != c)
-		i++;
-	if (str[i] == c)
-		return (i);
-	return (-1);
-}
-
-int	ft_str_ncmp(char *s1, char *s2, int n)
-{
-	int	i;
-
-	i = 0;
-	while (i < n - 1 && s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s2[i] - s1[i]);
-}
-
 char	*path_join(char *path, char *bin)
 {
 	char	*joined;
 	int		i;
 	int		j;
 
-	joined = malloc(sizeof(char) * (ft_str_chr(path, 0) + ft_str_chr(bin, 0)
+	joined = malloc(sizeof(char) * (ft_strchr(path, 0) + ft_strchr(bin, 0)
 				+ 2));
 	i = 0;
 	j = 0;

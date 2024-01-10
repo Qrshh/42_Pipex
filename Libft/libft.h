@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 09:11:41 by abesneux          #+#    #+#             */
-/*   Updated: 2024/01/09 17:37:37 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:21:44 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-char				*ft_strchr(const char *str, int c);
+int					ft_strchr(char *str, char c);
 char				*ft_strrchr(const char *str, int c);
 size_t				ft_strlen(const char *s);
 void				ft_putchar_fd(char c, int fd);
@@ -46,7 +46,7 @@ void				*ft_memmove(void *destination, const void *source,
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_memchr(const void *memoryBlock, int searchedChar,
 						size_t size);
-int					ft_strncmp(char *s1, char *s2, size_t n);
+int					ft_strncmp(char *s1, char *s2, int n);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlcat(char *dest, char *src, size_t size);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);

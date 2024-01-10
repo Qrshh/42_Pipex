@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:19:03 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/09 17:43:13 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:15:56 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 void	exit_error(char *msg);
 char	*path_join(char *path, char *bin);
 int		open_file(char *file, int nb);
-int		ft_str_chr(char *str, char c);
-int		ft_str_ncmp(char *s1, char *s2, int n);
+char	*getpath(char *cmd, char **env);
 
 #endif
