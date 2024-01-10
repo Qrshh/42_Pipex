@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:41:03 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/10 17:28:18 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:29:34 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	exec(char *cmd, char **env)
 	int		i;
 
 	i = -1;
-	if(*cmd == '\0')
+	if (*cmd == '\0')
 		exit_error("Erreur");
 	args = ft_split(cmd, ' ');
 	if (ft_strchr(args[0], '/') > -1)

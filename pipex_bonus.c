@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:46:10 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/10 17:28:11 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:29:50 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	exec(char *cmd, char **env)
 	char	*path;
 
 	i = -1;
-	if(*cmd == '\0')
+	if (*cmd == '\0')
 		exit_error("Erreur");
 	args = ft_split(cmd, ' ');
 	if (ft_strchr(args[0], '/') > -1)
@@ -57,6 +57,7 @@ void	redir(char *cmd, char **env)
 		exec(cmd, env);
 	}
 }
+
 void	heredoc2(char **av, int *fd_tab)
 {
 	char	*line;
