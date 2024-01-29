@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:46:10 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/10 18:29:50 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:22:44 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,6 @@ int	main(int ac, char **av, char **env)
 	int	fd2;
 	int	i;
 
-	if (ac < 5)
-		exit_error("Erreur, arguments attendu : ./pipex file1 cmd1 cmd2 file2");
 	if (ft_strcmp(av[1], "here_doc") == 0)
 	{
 		i = 3;

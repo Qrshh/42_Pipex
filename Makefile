@@ -40,7 +40,7 @@ clean :
 	make clean -C Libft
 
 fclean : clean
-	$(RM) $(NAME) $(NAMEBNS)
+	$(RM) $(NAME) $(NAME_BONUS)
 	make fclean -C Libft
 
 re : fclean all

@@ -6,7 +6,7 @@
 /*   By: abesneux <abesneux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:04:07 by ozdemir           #+#    #+#             */
-/*   Updated: 2024/01/10 17:22:42 by abesneux         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:08:49 by abesneux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	open_file(char *filename, int mode)
 		fd = (open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0644));
 	if (mode == 3)
 		fd = (open(filename, O_CREAT | O_WRONLY | O_APPEND, 0644));
+	if (fd == -1)
+		exit_error("Pas de fichier INFILE");
 	return (fd);
 }
 
